@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect } from 'react'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import Shop from './pages/Shop'
 import getIcon from './utils/iconUtils'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
   const SunIcon = getIcon('Sun')
   const MoonIcon = getIcon('Moon')
   const GiftIcon = getIcon('Gift')
+  const ShoppingBagIcon = getIcon('ShoppingBag')
 
   return (
     <div className="min-h-screen bg-surface-50 dark:bg-surface-900 text-surface-800 dark:text-surface-100 transition-colors duration-300">
@@ -36,7 +38,18 @@ function App() {
             <GiftIcon className="h-6 w-6 text-primary" />
             <h1 className="text-xl font-bold text-primary">GiftHarbor</h1>
           </div>
-          
+
+          <nav className="hidden md:flex items-center space-x-6">
+            <a href="/" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors">
+              Home
+            </a>
+            <a href="/shop" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors flex items-center">
+              <ShoppingBagIcon className="h-4 w-4 mr-1" />
+              Shop
+            </a>
+          </nav>
+
+
           <button 
             onClick={toggleDarkMode} 
             className="p-2 rounded-full bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 transition-colors duration-200"
@@ -54,6 +67,7 @@ function App() {
       <main className="container mx-auto px-4 py-6">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
