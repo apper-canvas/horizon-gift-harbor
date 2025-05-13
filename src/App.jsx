@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-surface-50 dark:bg-surface-900 text-surface-800 dark:text-surface-100 transition-colors duration-300">
-      <header className="sticky top-0 z-10 bg-white dark:bg-surface-800 shadow-sm dark:shadow-md backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
+      <header className="sticky top-0 z-50 bg-white dark:bg-surface-800 shadow-sm dark:shadow-md backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <GiftIcon className="h-6 w-6 text-primary" />

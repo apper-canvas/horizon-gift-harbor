@@ -308,9 +308,9 @@ const MainFeature = () => {
   }
   
   return (
-    <section className="py-12" id="gift-finder">
+    <section className="py-12 relative z-0" id="gift-finder">
       <div className="container mx-auto px-4">
-        <div className="bg-gradient-to-br from-secondary/10 to-primary/10 dark:from-secondary/5 dark:to-primary/5 rounded-2xl p-6 md:p-10 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-secondary/10 to-primary/10 dark:from-secondary/5 dark:to-primary/5 rounded-2xl p-6 md:p-10 relative z-10 overflow-hidden">
           {/* Background decoration */}
           <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-primary/20 blur-3xl"></div>
           <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-secondary/20 blur-3xl"></div>
