@@ -4,6 +4,7 @@ import ProductFilters from "../components/ProductFilters";
 import { products } from "../data/products";
 import getIcon from "../utils/iconUtils";
 import axios from "axios";
+import dayjs from "dayjs";
 
 const Shop = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -92,8 +93,11 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
+  const now = dayjs();
+
   return (
     <div className="min-h-screen">
+      {now.format("DD/MM/YYYY")}
       {/* Shop Banner */}
       <div className="bg-gradient-to-r from-primary/90 to-secondary/90 text-white rounded-xl mb-8 p-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Gift Shop</h1>
