@@ -90,6 +90,7 @@ const Shop = () => {
   };
 
   useEffect(() => {
+    console.log("fetching products", abc);
     fetchProducts();
   }, []);
 
