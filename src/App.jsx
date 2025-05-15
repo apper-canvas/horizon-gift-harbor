@@ -130,10 +130,10 @@ function App() {
                   </Link>
                 </li>
                   <Link to="/cart" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                <li>
                     Cart
                   </Link>
                 </li>
-                <li>
                 <li>
                   <Link to="/occasions" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     Occasions
