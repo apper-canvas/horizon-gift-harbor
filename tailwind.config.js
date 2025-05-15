@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+        // Other breakpoints are already defined by default:
+        // sm: '640px', md: '768px', lg: '1024px', xl: '1280px', '2xl': '1536px'
+      },
       colors: {
         primary: {
           DEFAULT: '#FF6B6B',

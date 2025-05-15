@@ -310,15 +310,15 @@ const MainFeature = () => {
   return (
     <section className="py-12 relative z-0" id="gift-finder">
       <div className="container mx-auto px-4">
-        <div className="bg-gradient-to-br from-secondary/10 to-primary/10 dark:from-secondary/5 dark:to-primary/5 rounded-2xl p-6 md:p-10 relative z-10 overflow-hidden">
+        <div className="bg-gradient-to-br from-secondary/10 to-primary/10 dark:from-secondary/5 dark:to-primary/5 rounded-2xl p-4 sm:p-6 md:p-10 relative z-10 overflow-hidden">
           {/* Background decoration */}
           <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-primary/20 blur-3xl"></div>
           <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-secondary/20 blur-3xl"></div>
           
           <div className="relative z-10">
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 md:mb-8">
               <div className="inline-flex items-center justify-center p-2 bg-white dark:bg-surface-800 rounded-full shadow-soft mb-4">
-                <GiftIcon className="w-6 h-6 text-primary" />
+                <GiftIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">Perfect Gift Finder</h2>
               <p className="text-surface-600 dark:text-surface-400 max-w-xl mx-auto">
@@ -328,11 +328,11 @@ const MainFeature = () => {
             
             <div className="max-w-3xl mx-auto">
               {/* Progress steps */}
-              <div className="flex items-center justify-between mb-8 px-4">
+              <div className="flex items-center justify-between mb-6 md:mb-8 px-2 sm:px-4">
                 {[1, 2, 3, 4, 5].map(step => (
                   <div key={step} className="flex flex-col items-center">
                     <div 
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mb-1
+                      className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium mb-1
                         ${step < giftFinderState.step 
                           ? 'bg-primary text-white' 
                           : step === giftFinderState.step 
@@ -340,9 +340,9 @@ const MainFeature = () => {
                             : 'bg-surface-200 dark:bg-surface-700 text-surface-500 dark:text-surface-400'
                         }`}
                     >
-                      {step < giftFinderState.step ? <CheckIcon className="w-4 h-4" /> : step}
+                      {step < giftFinderState.step ? <CheckIcon className="w-3 h-3 sm:w-4 sm:h-4" /> : step}
                     </div>
-                    <span className="text-xs hidden md:block text-surface-500 dark:text-surface-400">
+                    <span className="text-[10px] sm:text-xs hidden sm:block text-surface-500 dark:text-surface-400">
                       {step === 1 && 'Occasion'}
                       {step === 2 && 'Recipient'}
                       {step === 3 && 'Budget'}
@@ -362,10 +362,10 @@ const MainFeature = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.3 }}
-                    className="card"
+                    className="card px-4 sm:px-6"
                   >
                     <h3 className="text-xl font-semibold mb-4">What's the occasion?</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                       {occasions.map(item => (
                         <button
                           key={item.id}
@@ -399,10 +399,10 @@ const MainFeature = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.3 }}
-                    className="card"
+                    className="card px-4 sm:px-6"
                   >
                     <h3 className="text-xl font-semibold mb-4">Who are you shopping for?</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                       {recipients.map(item => (
                         <button
                           key={item.id}
@@ -442,10 +442,10 @@ const MainFeature = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.3 }}
-                    className="card"
+                    className="card px-4 sm:px-6"
                   >
                     <h3 className="text-xl font-semibold mb-4">What's your budget?</h3>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
                       {priceRanges.map(item => (
                         <button
                           key={item.id}
@@ -485,13 +485,13 @@ const MainFeature = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.3 }}
-                    className="card"
+                    className="card px-4 sm:px-6"
                   >
                     <h3 className="text-xl font-semibold mb-4">What are their interests?</h3>
                     <p className="text-surface-600 dark:text-surface-400 mb-4 text-sm">
                       Select all that apply
                     </p>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
                       {interestCategories.map(item => {
                         const isSelected = giftFinderState.interests
                           .split(',')
@@ -561,7 +561,7 @@ const MainFeature = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3 }}
-                    className="card"
+                    className="card px-4 sm:px-6"
                   >
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="text-xl font-semibold">Perfect Gift Suggestions</h3>
@@ -575,7 +575,7 @@ const MainFeature = () => {
                     </div>
                     
                     {giftResults.length > 0 ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         {giftResults.map((gift, index) => (
                           <motion.div
                             key={gift.id}
@@ -589,11 +589,12 @@ const MainFeature = () => {
                                 src={gift.image} 
                                 alt={gift.name}
                                 className="w-full h-full object-cover"
+                                loading="lazy"
                               />
                               <div className="absolute top-2 right-2 flex space-x-2">
                                 <button
                                   onClick={() => handleAddToWishlist(gift)}
-                                  className="p-1.5 rounded-full bg-white/90 hover:bg-white text-primary hover:text-primary-dark transition-colors"
+                                  className="p-2 sm:p-1.5 rounded-full bg-white/90 hover:bg-white text-primary hover:text-primary-dark transition-colors"
                                   aria-label="Add to wishlist"
                                 >
                                   <HeartIcon className="w-4 h-4" />
@@ -611,7 +612,7 @@ const MainFeature = () => {
                                 </button>
                               </div>
                             </div>
-                            <div className="p-4">
+                            <div className="p-3 sm:p-4">
                               <h4 className="font-semibold mb-1">{gift.name}</h4>
                               <p className="text-surface-600 dark:text-surface-400 text-sm mb-3 line-clamp-2">
                                 {gift.description}
