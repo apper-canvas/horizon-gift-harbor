@@ -129,9 +129,9 @@ function App() {
                     Categories
                   </Link>
                 </li>
+                <li>
                   <Link to="/cart" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
-                  <Link to="/cart" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
-                  </Link>
+                    Cart
                 </li>
                 <li>
                   <Link to="/occasions" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
