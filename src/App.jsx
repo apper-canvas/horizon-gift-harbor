@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Shop from './pages/Shop'
 import ErrorBoundary from './components/ErrorBoundary'
+import Cart from './pages/Cart'
 import getIcon from './utils/iconUtils'
 
 function App() {
