@@ -7,7 +7,7 @@ import NotFound from './pages/NotFound'
 import Shop from './pages/Shop'
 import ErrorBoundary from './components/ErrorBoundary'
 import Cart from './pages/Cart'
-import getIcon from './utils/iconUtils'
+import getIcon from './utils/iconUtils' 
 
 function App() {
   const currentYear = new Date().getFullYear()
@@ -35,6 +35,8 @@ function App() {
   const FacebookIcon = getIcon('Facebook')
   const TwitterIcon = getIcon('Twitter')
   const SendIcon = getIcon('Send')
+  const ShoppingCartIcon = getIcon('ShoppingCart')
+  const { useSelector } = require('react-redux')
   const ShoppingBagIcon = getIcon('ShoppingBag')
 
   return (
@@ -53,6 +55,17 @@ function App() {
             <Link to="/shop" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors flex items-center">
               <ShoppingBagIcon className="h-4 w-4 mr-1" />
               Shop
+            </Link>
+            <Link to="/cart" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors flex items-center">
+              <div className="relative">
+                <ShoppingCartIcon className="h-4 w-4 mr-1" />
+                {useSelector(state => state.cart.totalQuantity) > 0 && (
+                  <div className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                    {useSelector(state => state.cart.totalQuantity)}
+                  </div>
+                )}
+              </div>
+              Cart
             </Link>
           </nav>
 
@@ -77,6 +90,7 @@ function App() {
           <Route path="/shop" element={
             <ErrorBoundary><Shop /></ErrorBoundary>
           } />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -115,6 +129,11 @@ function App() {
                     Categories
                   </Link>
                 </li>
+                  <Link to="/cart" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    Cart
+                  </Link>
+                </li>
+                <li>
                 <li>
                   <Link to="/occasions" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     Occasions

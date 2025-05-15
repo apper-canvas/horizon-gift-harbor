@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import getIcon from '../utils/iconUtils';
@@ -7,6 +8,7 @@ import getIcon from '../utils/iconUtils';
 const ProductCard = ({ product, view }) => {
   const [showQuickView, setShowQuickView] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   
   const HeartIcon = getIcon('Heart');
   const StarIcon = getIcon('Star');
@@ -18,6 +20,7 @@ const ProductCard = ({ product, view }) => {
   const handleAddToCart = () => {
     dispatch(addToCart(product));
     toast.success(`${name} added to cart!`);
+    navigate('/cart');
   };
   
   // Render stars based on rating
