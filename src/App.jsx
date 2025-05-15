@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound'
 import Shop from './pages/Shop'
 import ErrorBoundary from './components/ErrorBoundary'
 import Cart from './pages/Cart'
+import { useSelector } from 'react-redux'
 import getIcon from './utils/iconUtils' 
 
 function App() {
@@ -35,7 +36,6 @@ function App() {
   const FacebookIcon = getIcon('Facebook')
   const TwitterIcon = getIcon('Twitter')
   const SendIcon = getIcon('Send')
-  const ShoppingCartIcon = getIcon('ShoppingCart')
   const { useSelector } = require('react-redux')
   const ShoppingBagIcon = getIcon('ShoppingBag')
 
