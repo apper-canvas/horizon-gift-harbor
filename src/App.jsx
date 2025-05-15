@@ -8,7 +8,8 @@ import Shop from './pages/Shop'
 import ErrorBoundary from './components/ErrorBoundary'
 import Cart from './pages/Cart'
 import { useSelector } from 'react-redux'
-import getIcon from './utils/iconUtils'
+import getIcon from './utils/iconUtils' 
+
 
 function App() {
   const currentYear = new Date().getFullYear()
@@ -16,6 +17,11 @@ function App() {
     localStorage.getItem('darkMode') === 'true' || 
     window.matchMedia('(prefers-color-scheme: dark)').matches
   )
+
+  // Get cart quantity from Redux store
+  const cartTotalQuantity = useSelector(state => state.cart.totalQuantity);
+  const [cartQuantity, setCartQuantity] = useState(0);
+  useEffect(() => setCartQuantity(cartTotalQuantity), [cartTotalQuantity]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -36,7 +42,8 @@ function App() {
   const FacebookIcon = getIcon('Facebook')
   const TwitterIcon = getIcon('Twitter')
   const SendIcon = getIcon('Send')
-  const ShoppingBagIcon = getIcon('ShoppingBag') 
+  const ShoppingBagIcon = getIcon('ShoppingBag')
+  const ShoppingCartIcon = getIcon('ShoppingCart')
 
   return (
     <div className="min-h-screen bg-surface-50 dark:bg-surface-900 text-surface-800 dark:text-surface-100 transition-colors duration-300">
@@ -58,9 +65,9 @@ function App() {
             <Link to="/cart" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors flex items-center">
               <div className="relative">
                 <ShoppingBagIcon className="h-4 w-4 mr-1" />
-                {useSelector(state => state.cart.totalQuantity) > 0 && (
+                {cartQuantity > 0 && (
                   <div className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                    {useSelector(state => state.cart.totalQuantity)}
+                    {cartQuantity}
                   </div>
                 )}
               </div>
