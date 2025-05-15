@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Shop from './pages/Shop'
+import ErrorBoundary from './components/ErrorBoundary'
 import getIcon from './utils/iconUtils'
 
 function App() {
@@ -67,7 +68,9 @@ function App() {
       <main className="container mx-auto px-4 py-6">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={
+            <ErrorBoundary><Shop /></ErrorBoundary>
+          } />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

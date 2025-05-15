@@ -90,9 +90,13 @@ const Shop = () => {
   };
 
   useEffect(() => {
-    console.log("fetching products", abc);
-    fetchProducts();
-    fetch("xyz.com")
+    console.log("fetching products");
+    try {
+      fetchProducts();
+    } catch (error) {
+      console.error("Error in product fetch:", error);
+    }
+    // Removed incorrect fetch call
   }, []);
 
   const now = dayjs();
