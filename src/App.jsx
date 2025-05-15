@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect } from 'react'
@@ -46,13 +46,13 @@ function App() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="/" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors">
+            <Link to="/" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors">
               Home
-            </a>
-            <a href="/shop" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors flex items-center">
+            </Link>
+            <Link to="/shop" className="text-surface-700 dark:text-surface-300 hover:text-primary dark:hover:text-primary transition-colors flex items-center">
               <ShoppingBagIcon className="h-4 w-4 mr-1" />
               Shop
-            </a>
+            </Link>
           </nav>
 
 
@@ -100,24 +100,24 @@ function App() {
               <h3 className="font-semibold text-surface-800 dark:text-surface-200">Explore</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                  <Link to="/" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/shop" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                  <Link to="/shop" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     Shop
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/categories" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                  <Link to="/categories" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     Categories
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/occasions" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                  <Link to="/occasions" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     Occasions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -130,14 +130,14 @@ function App() {
                   <span className="block">Mon-Fri: 9am-5pm EST</span>
                 </li>
                 <li>
-                  <a href="tel:+1-555-123-4567" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                  <Link to="tel:+1-555-123-4567" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     +1-555-123-4567
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="mailto:support@giftharbor.com" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                  <Link to="mailto:support@giftharbor.com" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
                     support@giftharbor.com
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -168,18 +168,18 @@ function App() {
           
           {/* Social links */}
           <div className="flex justify-center space-x-6 py-4 border-t border-surface-200 dark:border-surface-700">
-            <a href="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
+            <Link to="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
               <FacebookIcon className="h-5 w-5" aria-hidden="true" />
               <span className="sr-only">Facebook</span>
-            </a>
-            <a href="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
+            </Link>
+            <Link to="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
               <InstagramIcon className="h-5 w-5" aria-hidden="true" />
               <span className="sr-only">Instagram</span>
-            </a>
-            <a href="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
+            </Link>
+            <Link to="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
               <TwitterIcon className="h-5 w-5" aria-hidden="true" />
               <span className="sr-only">Twitter</span>
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

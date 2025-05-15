@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import MainFeature from '../components/MainFeature'
 import getIcon from '../utils/iconUtils'
@@ -109,10 +110,10 @@ const Home = () => {
                 Discover unique and thoughtful gifts that will delight your loved ones, all in one place.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="btn bg-white text-primary hover:bg-surface-100 hover:text-primary-dark flex items-center gap-2">
+                <Link to="/shop" className="btn bg-white text-primary hover:bg-surface-100 hover:text-primary-dark flex items-center gap-2">
                   <ShoppingBagIcon className="w-5 h-5" />
                   <span>Shop Now</span>
-                </button>
+                </Link>
                 <button className="btn border-2 border-white text-white hover:bg-white/20">
                   Explore Categories
                 </button>
@@ -191,10 +192,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold">Featured Gifts</h2>
-            <a href="#" className="text-primary hover:text-primary-dark font-medium flex items-center gap-1">
+            <Link to="/shop" className="text-primary hover:text-primary-dark font-medium flex items-center gap-1">
               View All
               <span className="text-lg">→</span>
-            </a>
+            </Link>
           </div>
           
           {isLoading ? (
