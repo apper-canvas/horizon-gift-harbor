@@ -17,10 +17,15 @@ const ProductCard = ({ product, view }) => {
   
   const { name, price, category, rating, reviewCount, isOnSale, originalPrice, image } = product;
   
-  const handleAddToCart = () => {
-    dispatch(addToCart(product));
-    toast.success(`${name} added to cart!`);
-    navigate('/cart');
+  const handleAddToCart = (e) => {
+    try {
+      e.preventDefault();
+      dispatch(addToCart(product));
+      toast.success(`${name} added to cart!`);
+      // Removed navigation to cart to allow users to continue shopping
+    } catch (error) {
+      toast.error(`Could not add ${name} to cart. Please try again.`);
+    }
   };
   
   // Render stars based on rating
