@@ -9,6 +9,7 @@ import ErrorBoundary from './components/ErrorBoundary'
 import getIcon from './utils/iconUtils'
 
 function App() {
+  const currentYear = new Date().getFullYear()
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem('darkMode') === 'true' || 
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -29,6 +30,10 @@ function App() {
   const SunIcon = getIcon('Sun')
   const MoonIcon = getIcon('Moon')
   const GiftIcon = getIcon('Gift')
+  const InstagramIcon = getIcon('Instagram')
+  const FacebookIcon = getIcon('Facebook')
+  const TwitterIcon = getIcon('Twitter')
+  const SendIcon = getIcon('Send')
   const ShoppingBagIcon = getIcon('ShoppingBag')
 
   return (
@@ -75,10 +80,106 @@ function App() {
         </Routes>
       </main>
       
-      <footer className="bg-white dark:bg-surface-800 border-t border-surface-200 dark:border-surface-700 py-6 mt-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center text-surface-500 dark:text-surface-400 text-sm">
-            © {new Date().getFullYear()} GiftHarbor. All rights reserved.
+      <footer className="bg-white dark:bg-surface-800 border-t border-surface-200 dark:border-surface-700 pt-10 pb-6 mt-12">
+        <div className="container mx-auto px-4 space-y-8">
+          {/* Main footer sections */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {/* Company info */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <GiftIcon className="h-6 w-6 text-primary" />
+                <h2 className="text-xl font-bold text-primary">GiftHarbor</h2>
+              </div>
+              <p className="text-surface-600 dark:text-surface-400 text-sm max-w-xs">
+                Your destination for unique and thoughtful gifts for every occasion. Discover perfect presents that create lasting memories.
+              </p>
+            </div>
+            
+            {/* Quick links */}
+            <div className="space-y-4">
+              <h3 className="font-semibold text-surface-800 dark:text-surface-200">Explore</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="/shop" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    Shop
+                  </a>
+                </li>
+                <li>
+                  <a href="/categories" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    Categories
+                  </a>
+                </li>
+                <li>
+                  <a href="/occasions" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    Occasions
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Contact info */}
+            <div className="space-y-4">
+              <h3 className="font-semibold text-surface-800 dark:text-surface-200">Customer Support</h3>
+              <ul className="space-y-2">
+                <li className="text-surface-600 dark:text-surface-400 text-sm">
+                  <span className="block">Mon-Fri: 9am-5pm EST</span>
+                </li>
+                <li>
+                  <a href="tel:+1-555-123-4567" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    +1-555-123-4567
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:support@giftharbor.com" className="text-surface-600 dark:text-surface-400 hover:text-primary dark:hover:text-primary text-sm transition-colors">
+                    support@giftharbor.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Newsletter */}
+            <div className="space-y-4">
+              <h3 className="font-semibold text-surface-800 dark:text-surface-200">Stay Updated</h3>
+              <p className="text-surface-600 dark:text-surface-400 text-sm">
+                Subscribe for exclusive offers and gift ideas.
+              </p>
+              <form className="flex mt-2">
+                <input 
+                  type="email" 
+                  placeholder="Your email" 
+                  className="input text-sm py-2 rounded-r-none"
+                  aria-label="Email for newsletter"
+                />
+                <button 
+                  type="submit" 
+                  className="btn-primary !rounded-l-none !py-2 flex items-center justify-center"
+                  aria-label="Subscribe to newsletter"
+                >
+                  <SendIcon className="h-4 w-4" />
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          {/* Social links */}
+          <div className="flex justify-center space-x-6 py-4 border-t border-surface-200 dark:border-surface-700">
+            <a href="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
+              <FacebookIcon className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">Facebook</span>
+            </a>
+            <a href="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
+              <InstagramIcon className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a href="#" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary transition-colors">
+              <TwitterIcon className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">Twitter</span>
+            </a>
           </div>
         </div>
       </footer>
